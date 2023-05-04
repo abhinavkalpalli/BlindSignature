@@ -1,0 +1,52 @@
+{% extends 'agencyindex.html' %}
+{% block body %}
+<head><style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/*#customers tr:nth-child(even){background-color: #000000;}*/
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #000000;
+  color: white;
+}
+</style></head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table id="customers">
+    <tr>
+      <th>PRODUCT</th>
+      <th>DATE</th>
+      <th>QUANTITY</th>
+      <th>STATUS</th>
+    </tr>
+
+    {% for i in val %}
+    <tr>
+      <td>&nbsp;{{i['name']}}
+
+        <!--<br><img src="../static/uploads/{{i['image']}}" width="100" height="100"/>-->
+      </td>
+      <td>&nbsp;{{i['date']}}</td>
+      <td>&nbsp;{{i['qty']}}</td>
+      <td>&nbsp;{{i['status']}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

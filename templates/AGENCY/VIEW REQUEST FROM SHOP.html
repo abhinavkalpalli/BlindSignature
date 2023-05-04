@@ -1,0 +1,67 @@
+{% extends 'agencyindex.html' %}
+{% block body %}
+<head><style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/*#customers tr:nth-child(even){background-color: #000000;}*/
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #000000;
+  color: white;
+}
+</style></head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table id="customers">
+    <tr>
+      <th>SHOP NAME </th>
+      <th>ADDRESS</th>
+      <th>PRODUCT</th>
+      <!--<th>IMAGE</th>-->
+      <th>QUANTITY</th>
+      <th>&nbsp;</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i['name']}}</td>
+      <td>&nbsp;PLACE:{{i['place']}}<br> POST:{{i['post']}} <br>PIN:{{i['pin']}}</td>
+      <td>&nbsp;{{i['pname']}}</td>
+      <!--<td><img src="../static/uploads/{{i['image']}}" width="100" height="100"/></td>-->
+      <td>&nbsp;{{i['qty']}}</td>
+      <td>
+
+        {% if i['status']=='pending'%}
+        <p><a href="acceptshopreq?id={{i['reqid']}}#about">ACCEPT</a></p>
+      <p>&nbsp;</p>
+      <p><a href="rejectshopreq?id={{i['reqid']}}#about">REJECT</a></p>
+
+        {% elif i['status']=='reject'%} REJECTED
+        {% else %} ACCEPTED
+        {% endif %}
+
+
+
+
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

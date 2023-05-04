@@ -1,0 +1,69 @@
+{% extends 'shopindex.html' %}
+{% block body %}
+<head><style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/*#customers tr:nth-child(even){background-color: #000000;}*/
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #000000;
+  color: white;
+}
+</style></head>
+
+<body>
+<form id="form1" name="form1" method="post" action="search#about">
+  <p>&nbsp;</p>
+  <table width="200" border="1">
+    <tr>
+      <th>AGENCY</th>
+      <td><label>
+        <select name="select">
+          {% for i in val %}
+          <option value="{{i['lid']}}">{{i['fname']}}<br><br>{{i['lname']}}</option>
+          {% endfor %}
+        </select>
+      </label></td>
+      <td><label>
+        <input type="submit" name="Submit" value="SEARCH" />
+      </label></td>
+    </tr>
+  </table>
+  <table id="customers">
+    <tr>
+
+      <th>PRODUCT</th>
+      <th>IMAGE</th>
+      <th>DESCRIPTION</th>
+      <th>PRICE</th>
+      <th>QUANTITY</th>
+      <th>&nbsp;</th>
+    </tr>
+    {% for i in  val1 %}
+    <tr>
+      <td>&nbsp;{{i['name']}}</td>
+      <td><a href="verifyprdct?id={{i['pid']}}#about">VERIFY</a></td>
+      <td>&nbsp;{{i['description']}}</td>
+      <td>&nbsp;{{i['price']}}</td>
+      <td>&nbsp;{{i['qty']}}</td>
+      <td><a href="reqquantity_shop?iid={{i['pid']}}#about">REQUEST</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'manufactureindex.html' %}
+{% block body %}
+
+<body>
+<form action="editproduct1" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table  class="table table-striped table-hover">
+    <tr>
+      <td>PRODUCT</td>
+      <td><label>
+        <input type="text" name="textfield"  value="{{val['name']}}" class="form-control" required />
+      </label></td>
+    </tr>
+    <tr>
+      <td>IMAGE</td>
+      <td><label>
+        <input type="file" name="file" class="form-control"  /><img src="../static/uploads/{{val['image']}}" width="100" height="100"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>PRICE</td>
+      <td><label>
+        <input type="text" name="textfield2" value="{{val['price']}}"  class="form-control" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>DESCRIPTION</td>
+      <td><label>
+      <textarea name="textarea" class="form-control" required>{{val['description']}}</textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <td>QUANTITY</td>
+      <td><label>
+        <input type="text" name="textfield4"  class="form-control" value="{{val['qty']}}" required/>
+      </label></td>
+    </tr>
+    <tr align="center">
+      <td colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="UPDATE"  class="btn btn-success"/>
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,89 @@
+<!--A Design by W3layouts 
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<html lang="en">
+<head>
+<title>BLIND SIGNATURE</title>
+ 
+	<!-- Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Space Register Form a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta-Tags -->
+
+	<!-- css files -->
+	<link href="../static/shop/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- css files -->
+
+	<!-- Online-fonts -->
+	<link href="../static/shop/fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+	<!-- //Online-fonts -->
+
+</head>
+<body>
+
+	<!-- Main Content -->
+	<div class="main">
+		<div class="main-w3l">
+			<h1 class="logo-w3">Shop Register Form</h1>
+			<div class="w3layouts-main">
+				<h2><span>Register now</span></h2>
+					<form action="Shopregister1" method="post">
+						<input placeholder="Full Name" name="textfield" type="text" required pattern="[A-Z a-z.]{1,25}">
+						<input placeholder="Place" name="textfield2" type="text" required pattern="[A-Z a-z.]{1,25}">
+						<input placeholder="Post" name="textfield9" type="text" required pattern="[A-Z a-z.]{1,25}">
+						<input placeholder="Pin" name="textfield10" type="text" required pattern="[0-9]{6}">
+						<input placeholder="Email" name="textfield4" type="text" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}">
+						<input placeholder="Phone Number" name="textfield3" type="text" required pattern="[6789][0-9]{9}">
+						<input placeholder="User Name" name="textfield5" type="text" required pattern="[A-Z a-z.]{1,25}">
+						<input placeholder="Password" name="textfield6" type="password"  id="password1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+						<!--<input placeholder="Confirm Password" name="Password" type="password"  id="password2" required="">-->
+						<input type="submit" value="Register" name="login">
+					</form>
+			</div>
+			<!-- //main -->
+			
+			<!-- password-script -->
+			<script>
+				window.onload = function () {
+					document.getElementById("password1").onchange = validatePassword;
+					document.getElementById("password2").onchange = validatePassword;
+				}
+
+				function validatePassword() {
+					var pass2 = document.getElementById("password2").value;
+					var pass1 = document.getElementById("password1").value;
+					if (pass1 != pass2)
+						document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+					else
+						document.getElementById("password2").setCustomValidity('');
+					//empty string means no validation error
+				}
+			</script>
+			<!-- //password-script -->
+
+			<!--footer-->
+			<div class="footer-w3l">
+				<!--<p>&copy; 2018 Space Register Form. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>-->
+			</div>
+			<!--//footer-->
+			
+		</div>
+	</div>
+	<!-- //Main Content -->
+
+</body>
+</html>

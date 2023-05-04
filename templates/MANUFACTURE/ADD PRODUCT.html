@@ -1,0 +1,47 @@
+{% extends 'manufactureindex.html' %}
+{% block body %}
+
+<body>
+<form action="addproduct1" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table class="table table-striped table-hover">
+    <tr>
+      <td>PRODUCT</td>
+      <td><label>
+        <input type="text" name="textfield"  class="form-control" required pattern="[A-Z a-z.]{1,50}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>IMAGE</td>
+      <td><label>
+        <input type="file" name="file"  class="form-control" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>PRICE</td>
+      <td><label>
+        <input type="number" name="textfield2" class="form-control"  required />
+      </label></td>
+    </tr>
+    <tr>
+      <td>DESCRIPTION</td>
+      <td><label>
+      <textarea name="textarea" class="form-control" required></textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <td>QUANTITY</td>
+      <td><label>
+        <input type="number" name="textfield4"  class="form-control" required/>
+      </label></td>
+    </tr>
+    <tr align="center">
+      <td colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="ADD" class="btn btn-success" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}
